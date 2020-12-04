@@ -1,17 +1,22 @@
 <?php
-    include("include/connectDB.php");
+    include("connectDB.php");
   //Variables from connectDB.php: $dbconn- connection object
     if(isset($_POST['frmAddPatient']))
     {
-      $sqlStatement="INSERT INTO  patient (LastName)
+      $sqlStatement="INSERT INTO  patient (LastName,
+                                  FirstName, DateOfBirth,
+                                  Address, Age, Gender, MaritialStatus)
                                   VALUES
-                                  <'$POST[LastName]'";
-      if(!mysql_query($sqlStatement, dbConn))
+                                  ('$_POST[LastName]', '$_POST[FirstName]',
+                                    '$_POST[DateOfBirth]', '$_POST[Address]',
+                                    '$_POST[Age]', '$_POST[Gender]',
+                                    '$_POST[MaritialStatus]') ";
+      if(!mysqli_query($dbConn, $sqlStatement))
       {
         die('Error: ' . mysql_error());
       }
-      echo "<h2>RECORD ADDED</h2>";
-      include("include/closeDB.php");
+      echo '<h1>Record Added</h1>';
+      include("closeDB.php");
     }
 
     ?>

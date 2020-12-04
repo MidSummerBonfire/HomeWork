@@ -1,10 +1,10 @@
 <?php
-  $dbConn = mysql_connect('localhost', 'helper', 'feelBetter');
+  $dbConn = mysqli_connect('localhost', 'helper', 'feelBetter', 'doctorwho');
   if(!$dbConn)
   {
     die('Could not Connect: ' . mysql_error());
   }
   //doctorwho is the name of the //
-  $dbObj = mysql_select_db('doctorwho', $dbConn);
+  $dbObj = mysqli_select_db($dbConn, "doctorwho");
 
  ?>

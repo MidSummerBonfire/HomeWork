@@ -15,7 +15,7 @@ $("#btnEnter").click(function () {
   if (document.getElementById("passcode").value ==
     password && document.getElementById("userName").value == userName) {
         $("#btnEnter").attr("href",
-          "#pageNurse").button();
+          "#pageHome").button();
               }
   else {
     alert(

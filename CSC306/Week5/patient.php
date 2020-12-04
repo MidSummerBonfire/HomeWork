@@ -1,4 +1,5 @@
-<?php include ('assets/insert.php'); ?>
+<?php include ('assets/insert.php');
+      include ('assets/getPatient.php');?>
 
 <html>
 
@@ -9,6 +10,7 @@
     <meta charset="utf-8">
 
     <!--CSS -->
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/>
     <script src="scripts/jquery-1.9.1.min.js"></script>
     <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
@@ -17,7 +19,7 @@
   <body>
 
     <!--login page -->
-    <!-- <div data-role="page" id="pageHome">
+    <div data-role="page" id="loginPage">
       <div data-role="header">
         <h1>Login Doctor Who Portal</h1>
       </div>
@@ -31,7 +33,7 @@
           <a data-role="button" id="btnEnter" type="submit">Enter</a>
         </div>
       </div>
-    </div> -->
+    </div>
     <!-- User Page  -->
     <div data-role="page" id="pageHome">
       <div data-role="header">
@@ -59,11 +61,37 @@
       <table>
         <tr>
           <td>
-            Enter Patients Last Name: <br>
+            <div id=NewPatientRecord>
+              Last Name: <br>
+              First Name: <br>
+              Date of Birth: <br>
+              Address: <br>
+              Age: <br>
+              Gender:        <input type="checkbox" name=
+                          "Gender" value='1'><br>
+              Maritial Status:    <input type="checkbox" name=
+                          "MaritialStatus" value='1'><br>
+            </div>
           </td>
           <td>
             <input type="text" name=
             "LastName" size="16">
+
+            <input type="text" name=
+            "FirstName" size="16">
+
+            <input type="date" name=
+            "DateOfBirth" size="16">
+
+            <input type="text" name=
+            "Address" size="16">
+
+            <input type="range" name=
+            "Age" size="16" min='0' max='130'>
+
+            <div><br>check if Male <br><br><br><br>
+              check if Married</div>
+
           </td>
         </tr>
         <tr>
@@ -79,6 +107,18 @@
       <div data-role="header">
         <h1>Search Patient Portal</h1>
       </div>
+
+      <form action="<?php echo
+      $_SERVER['PHP_SELF'];?>"
+      method = "post">
+      <table>
+        <tr>
+          <td>
+              <input type="submit" name="frmFindPatient" value="Find Patient">
+          </td>
+        </tr>
+      </table>
+    </form>
     </div>
 
 
