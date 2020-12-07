@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
   <title>header file</title>
-  <script language="JavaScript" type="text/text/javascript">
+  <script language="JavaScript" type="text/javascript">
 
     function showHint(str)
     {

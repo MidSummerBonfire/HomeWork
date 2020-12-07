@@ -13,9 +13,9 @@ $q = $_GET["q"];
 if(strlen($q) > 0)
 {
   $hint="";
-  for($i=0; $i<count($movies); i++)
+  for($i=0; $i<count($movies); $i++)
   {
-    if(strtolower($q)==strtolower(substr($movies[$i],0,strlen(q))))
+    if(strtolower($q)==strtolower(substr($movies[$i],0,strlen($q))))
     {
     if($hint=="")
     {
