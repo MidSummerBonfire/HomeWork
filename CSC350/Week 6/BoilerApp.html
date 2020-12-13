@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <title>Boiler Information</title>
+
+  <!--Adjusting the page on mobile screen  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="scripts/jquery-1.9.1.min.js"></script>
+  <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+
+<body>
+  <!--login page -->
+  <div data-role="page" id="pageHome">
+    <div data-role="header">
+      <h1>Boiler App</h1>
+    </div>
+    <div data-role="content">
+      Password :
+      <input type="password" id="passcode"></input>
+
+      <div data-role="controlgroup" id="numKeyPad">
+        <a data-role="button" id="btnEnter" type="submit">Enter</a>
+        <a href="#pageAbout" data-role="button">About</a>
+      </div>
+      <div class="calculator">
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(7)">7</a>
+        <a data-role="button" onclick="addValueToPassword(8)">8</a>
+        <a data-role="button" onclick="addValueToPassword(9)">9</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(4)">4</a>
+        <a data-role="button" onclick="addValueToPassword(5)">5</a>
+        <a data-role="button" onclick="addValueToPassword(6)">6</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(1)">1</a>
+        <a data-role="button" onclick="addValueToPassword(2)">2</a>
+        <a data-role="button" onclick="addValueToPassword(3)">3</a>
+      </div>
+      <div data-role="controlgroup" data-type="horizontal">
+        <a data-role="button" onclick="addValueToPassword(0)">0</a>
+        <a data-role="button" onclick="addValueToPassword('bksp')"
+        data-icon="delete">del</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu page -->
+  <div data-role="page" id="pageMenu">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <h1>Boiler App Menu</h1>
+    </div>
+    <div data-role="content">
+      <div data-role="controlgroup">
+        <a href="#pageOne" data-role="button">Basic Boiler Information</a>
+        <a href="#pageTwo" data-role="button">Temprature and Pressure Data</a> <!-- add pages -->
+        <a href="#pageThree" data-role="button">Graph Data</a>
+        <a href="#pageFour" data-role="button">Recommendations</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Page 1-->
+  <div data-role="page" id="pageOne">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <h1>Basic Boiler Information</h1>
+    </div>
+  <div data-role="content">
+    <form id="frmUserForm" action="">
+      <div data-role="fieldcontain">
+        <label for="txtFirstName">First Name: </label>
+        <input type="text" placeholder="First Name" name="txtFirstName"
+        data-mini="false" id="txtFirstName" value=""
+        required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="txtLastName">Last Name: </label>
+        <input type="text" placeholder="Last Name" name="txtLastName"
+        data-mini="false" id="txtLastName" value=""
+        required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="datePurchase">Date of Purchase: </label>
+        <input type="date" name="datePurchase" data-mini="false"
+        id="datePurchase" value="" required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="changePassword">Edit Password: </label>
+        <input type="password" placeholder="New Password" name="changePassword"
+        data-mini="false" id="changePassword" value=""
+        required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="boilerdNumber">BoilerID: </label>
+        <input type="text" placeholder="Boiler ID Number"
+        name="boilerdNumber" data-mini="false"
+        id="boilerdNumber" value="" required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="maxPress" class="select">Maximum Pressure: </label>
+        <input type="text" name="maxPress" id="maxPress" data-mini="false"
+        placeholder="Maximum Pressure" required>
+      </div>
+      <div data-role="fieldcontain">
+        <label for="minPress" class="select">Maximum Temprature: </label>
+        <input type="text" name="minPress" id="minPress" data-mini="false"
+        placeholder="Maximum Temprature" required>
+      </div>
+
+      <input type="submit" id="btnUserUpdate" data-icon="check"
+      data-iconpos="left" value="Update" data-inline="true">
+    </form>
+  </div>
+  <!--Page 2-->
+  <div data-role="page" id="pageTwo">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <h1>Temprature and Pressure Data</h1>
+    </div>
+  </div>
+</div>
+
+  <!--Page 3-->
+  <div data-role="page" id="pageThree">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <h1>Graph Data</h1>
+    </div>
+        <div id="box-container">
+          <div id="box-1"><p>100 PSIG</p></div>
+          <div id="box-2"><p>20 Degrees F</p></div>
+        </div>
+  </div>
+  <!--Page 4-->
+  <div data-role="page" id="pageFour">
+    <div data-role="header">
+      <a href="#pageMenu" data-role="button" data-icon="bars"
+      data-iconpos="left" data-inline="true">Menu</a>
+      <h1>Recommendations</h1>
+    </div>
+    <div data-role="content">
+
+    <h1>Clean Boiler</h1>
+
+    </div>
+  </div>
+
+    <!--Javascript code -->
+    <script src="scripts/password.js"></script>
+    <script src="scripts/UserForm.js"></script>
+</body>
+</html>

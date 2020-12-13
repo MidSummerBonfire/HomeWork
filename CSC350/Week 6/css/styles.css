@@ -1,0 +1,26 @@
+.calculator {
+/*  margin: 25px;
+  padding: 5em;
+  margin-left: 49em;
+  margin-right: 49em; */
+  background-color: lightgrey;
+  border-radius: 25px;
+}
+#box-container {
+  background: gray;
+  display: flex;
+  height: 500px;
+  align-items: center;
+
+}
+#box-1 {
+  background-color: dodgerblue;
+  width: 200px;
+  font-size: 24px;
+}
+
+#box-2 {
+  background-color: orangered;
+  width: 200px;
+  font-size: 18px;
+}
